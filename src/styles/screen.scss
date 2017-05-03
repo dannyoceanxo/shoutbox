@@ -1,13 +1,76 @@
 @import 'utility';
+@import url('https://fonts.googleapis.com/css?family=Cabin|Open+Sans');
 
 $base-text-size: 16px;
-$base-font-family: sans-serif;
+$mainFont: 'Cabin';
+$secondaryFont: 'Open Sans';
+$primaryWhite: #f7f7f7;
 
 html {
-  @include full-height;
+  min-height: 100%;
 }
 
 body {
   margin: 0;
-  font: $base-text-size / 1 $base-font-family;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  @include flex(column, space-around, center);
+  @include linearGrad(rgb(79, 189, 236), darken(rgb(79, 189, 236), 20%));
+  text-align: center;
+  font-family: Cabin;
+
+  min-height: 100vh;
+
+  h1 {
+    font-family: $mainFont;
+    color: $primaryWhite;
+  }
+}
+
+.chatContainer {
+  width: 95vw;
+  min-height: 500px;
+  background-color: lighten(rgb(79, 189, 236), 10%);
+  border-radius: 5px;
+}
+
+.mainContainer {
+  @include size(100%, 100%);
+  @include flex(column, flex-start, flex-start);
+
+  .chatText {
+    background-color: rgb(79, 142, 236);
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-left: 1em;
+  }
+
+  p {
+    font-family: $secondaryFont;
+    color: $primaryWhite;
+  }
+}
+
+.inputContainer {
+  width: 80vw;
+}
+
+textarea {
+  @include size(80vw, inherit);
+
+  background-color: transparent;
+  color: $primaryWhite;
+  font-size: 50px;
+  line-height: 50px;
+  border: none;
+  border-bottom: 3px dashed rgb(229, 242, 125);
+
+  &:focus {
+    outline: none;
+  }
 }
