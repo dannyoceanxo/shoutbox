@@ -23,6 +23,7 @@ body {
   @include linearGrad(rgb(79, 189, 236), darken(rgb(79, 189, 236), 20%));
   text-align: center;
   font-family: Cabin;
+  color: #fff;
 
   min-height: 100vh;
 

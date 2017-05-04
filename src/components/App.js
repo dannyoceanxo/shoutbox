@@ -55,7 +55,7 @@ class App extends Component {
       return <div className='App'>
         <h1>Shout Box</h1>
         <form onSubmit={this.signIn}>
-          <p>Who you is, what yo name?</p>
+          <p>New shout box, who dis?</p>
           <input className='inputBox' ref='username' />
         </form>
       </div>
